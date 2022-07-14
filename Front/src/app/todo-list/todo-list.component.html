@@ -1,0 +1,93 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> TODO List </h4>
+                        <p class="card-category"> A complete detailed list of todos</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="th-bin">
+                                    
+                                    <th>
+                                        name
+                                    </th>
+                                    <th>
+                                        description
+                                    </th>
+                                    <th>
+                                        createdAt
+                                    </th>
+                                    <th>
+                                        updatedAt
+                                    </th>
+                                    <th>
+                                        endedAt
+                                    </th>
+                                    <th>
+                                        duration
+                                    </th>
+                                    <th>
+                                        status
+                                    </th>
+                                    <th>
+                                      
+                                        <button  mat-mini-fab color="accent" color="warn"  matTooltip="Add bin" (click)="createTodo()"  matTooltipPosition="'above'">
+                                            <i class="material-icons" >plus_one</i>
+                                          </button>
+                                    </th>
+                                </thead>
+                                 <tbody>
+                                    <tr *ngFor="let todo of todos">
+                                        
+                                        <td>
+                                            {{todo.name}}
+                                        </td>
+                                        <td>
+                                            {{todo.description}}
+                                        </td>
+                                        <td >
+                                            {{todo.createdAt}}
+                                        </td>
+                                        <td>
+                                            {{todo.updatedAt}}
+                                        </td>
+                                        <td>
+                                            {{todo.endedAt}}
+                                        </td>
+                                        <td >
+                                           {{todo.duration}}
+                                            
+                                        </td>
+                                        <td>
+                                            <i class="material-icons" [style]="iconStyle(todo.status)">
+                                                {{iconClass(todo.status)}}
+                                            </i> 
+                                        </td>
+                                        <td class="td-actions text-right"  >
+                                            <button mat-raised-button type="button" matTooltip="Edit" (click)="onEdit(todo.name)"  [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                            <button mat-raised-button type="button" matTooltip="Remove" (click)="onDelete(todo.name)"  [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                  
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+       
+     </div>
+    
+  </div>
+  

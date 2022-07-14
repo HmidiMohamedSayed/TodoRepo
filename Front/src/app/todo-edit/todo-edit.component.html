@@ -1,0 +1,46 @@
+<div class="col-md-12" >
+    <div class="card">
+          <div class="card-header card-header-danger">
+              <h4 class="card-title">Edit Todo</h4>
+              <p class="card-category">Edit your todo</p>
+          </div>
+    </div>
+    <form [formGroup]="todoForm">
+        <div class="row">
+          <div class="col-md-6">
+              <mat-form-field class="example-full-width">
+              <input matInput placeholder="name..." type="text" ng-model="con" formControlName="name" [value]="todo.name" required >
+              </mat-form-field>
+          </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                <input matInput placeholder="description..." [value]="todo.description" type="text" ng-model="cap" formControlName="description" required>
+                </mat-form-field>
+            </div>
+        
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="duration(days)" [value]="todo.duration" type="text" ng-model="con"  formControlName="duration" required>
+              </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Status</mat-label>
+                  <mat-select formControlName="status"  [value]="todo.status" >
+                      <mat-option value="not started" >NOT STARTED</mat-option>
+                      <mat-option value="in Progress" >IN PROGRESS</mat-option>
+                      <mat-option value="ended">ENDED</mat-option>
+                    </mat-select>                     
+                   </mat-form-field>
+                </div>
+        </div>
+       
+      <button mat-raised-button type="submit" class="btn btn-danger pull-right"  (click)="onUpdate()">Update </button>
+
+    </form>
+         
+</div>
+
